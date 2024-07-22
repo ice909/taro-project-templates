@@ -1,6 +1,6 @@
 {{#if (includes "React" "Preact" s=framework)}}
+import { Component } from 'react'
 {{#if typescript }}import { PropsWithChildren } from 'react'{{/if}}
-import { useLaunch } from '@tarojs/taro'
 {{/if}}{{#if (eq framework 'Vue3') }}
 import { createApp } from 'vue'
 {{/if}}
