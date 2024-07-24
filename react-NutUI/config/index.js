@@ -30,7 +30,7 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
     },
     framework: '{{ to_lower_case framework }}',
     compiler: {
-      type: '{{ to_lower_case compiler }}'{{#if (eq compiler "Webpack5") }},
+      {{#if (eq compiler "Vite") }}
       vitePlugins: [
         react(),
         vitePluginImp({
@@ -45,7 +45,8 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
             }
           ]
         })
-      ],
+      ],{{/if}}
+      type: '{{ to_lower_case compiler }}'{{#if (eq compiler "Webpack5") }}, 
       prebundle: {
         enable: false
       }{{/if}}
