@@ -57,5 +57,5 @@ module.exports = {
   handler,
   basePageFiles,
   platforms: ["React", "Preact", "Vue3"],
-  compiler: ['Webpack4', 'Webpack5']
+  compiler: ["Webpack5"]
 };
