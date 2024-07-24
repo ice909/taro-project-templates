@@ -7,7 +7,7 @@ module.exports = {
       ts: {{ typescript }},
       compiler: '{{ to_lower_case compiler }}',
     }]
-  ]
+  ],
   plugins: [
     [
       'import',
