@@ -31,19 +31,15 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
     compiler: {
       {{#if (eq compiler "Vite") }}
       vitePlugins: [
-        react(),
-        vitePluginImp({
-          libList: [
-            {
-              libName: '@nutui/nutui-react-taro',
-              style: (name) => {
-                return `@nutui/nutui-react-taro/dist/esm/${name}/style/css`
-              },
-              replaceOldImport: false,
-              camel2DashComponentName: false,
-            }
-          ]
-        })
+        {
+          libName: "@nutui/nutui-react-taro",
+          style: (name) => {
+            console.log(name)
+            return `@nutui/nutui-react-taro/dist/esm/${name}/style/css`;
+          },
+          replaceOldImport: false,
+          camel2DashComponentName: false,
+        },
       ],{{/if}}
       type: '{{ to_lower_case compiler }}'{{#if (eq compiler "Webpack5") }}, 
       prebundle: {
