@@ -29,6 +29,12 @@ const handler = {
       setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.css`))
     }
   },
+  '/src/pages/index/index.vue' (err, { pageDir = '', pageName = '', subPkg = '' }) {
+    return {
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, `${pageName}.vue`)),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, `${pageName}.vue`))
+    }
+  },
   '/_eslintrc' () {
     return { setPageName: `/.eslintrc` }
   },
@@ -42,7 +48,9 @@ const handler = {
 
 const basePageFiles = [
   '/src/pages/index/index.jsx',
-  '/src/pages/index/index.css'
+  '/src/pages/index/index.vue',
+  '/src/pages/index/index.css',
+  '/src/pages/index/index.config.js'
 ]
 
 module.exports = {

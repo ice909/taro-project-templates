@@ -1,9 +1,9 @@
 {{#if (includes "React" "Preact" s=framework)}}
-{{#if typescript }}import { PropsWithChildren } from 'react'{{/if}}{{/if}}
+import { Component } from 'react'
 
-{{#if (eq framework 'Vue') }}
-import Vue from 'vue'
-{{/if}}{{#if (eq framework 'Vue3') }}
+{{#if typescript }}import type { PropsWithChildren } from 'react'{{/if}}{{/if}}
+
+{{#if (eq framework 'Vue3') }}
 import { createApp } from 'vue'
 {{/if}}
 import './app.{{ cssExt }}'
@@ -23,16 +23,7 @@ class App extends Component{{#if typescript }}<PropsWithChildren>{{/if}} {
   }
 }
 {{/if}}
-{{#if (eq framework 'Vue') }}
-const App = {
-    onShow(options) {
-    },
-    render(h) {
-      // this.$slots.default 是将要会渲染的页面
-      return h('block', this.$slots.default)
-    }
-}
-{{/if}}
+
 {{#if (eq framework 'Vue3') }}
 const App = createApp({
     onShow(options) { },

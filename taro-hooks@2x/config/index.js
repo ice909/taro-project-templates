@@ -1,11 +1,3 @@
-module.exports = function (merge) {
-  if (process.env.NODE_ENV === "development") {
-    return merge({}, config, require("./dev"));
-  }
-  return merge({}, config, require("./prod"));
-};
-
-
 import { defineConfig{{#if typescript }}, type UserConfigExport{{/if}} } from '@tarojs/cli'
 {{#if typescript }}import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'{{/if}}
 import devConfig from './dev'
