@@ -35,9 +35,6 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
           {
             libName: '@nutui/nutui-react-taro',
             style: (name) => {
-              // console.log(name)
-              // console.log(name)
-              // console.log(name)
               return `@nutui/nutui-react-taro/dist/esm/${name}/style/css`
             },
             replaceOldImport: false,
