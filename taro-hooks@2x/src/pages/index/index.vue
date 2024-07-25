@@ -10,10 +10,10 @@
       <text class="label">运行环境</text>
       <text class="note">\{{ env }}</text>
     </view>
-    <button class="button" @click="setTitle('Taro Hooks Nice!')">
+    <button class="button" @tap="setTitle('Taro Hooks Nice!')">
       设置标题
     </button>
-    <button class="button" @click="handleModal()">使用Modal</button>
+    <button class="button" @tap="handleModal()">使用Modal</button>
   </view>
 </template>
 
