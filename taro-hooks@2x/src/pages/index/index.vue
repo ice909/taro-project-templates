@@ -1,6 +1,6 @@
 <template>
   <view class="wrapper">
-    <image class="logo" :src="require('./hook.png')" />
+    <image class="logo" :src="logo" />
     <text class="title">为Taro而设计的Hooks Library</text>
     <text class="desc">
       目前覆盖70%官方API. 抹平部分API在H5端短板. 提供近40+Hooks!
@@ -19,6 +19,7 @@
 
 <script setup>
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
+import logo from './hook.png'
 
 const env = useEnv();
 const { setTitle } = useNavigationBar({ title: "Taro Hooks" });
