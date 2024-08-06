@@ -26,28 +26,25 @@ function Index() {
   }
   return (
     <ConfigProvider locale={locale}>
-    <View className="nutui-react-demo">
-      <Cell>
-        <h3>{translated[localeKey].welcome}</h3>
-      </Cell>
-      <View>
-        <Button type="primary" onClick={handleSwitchLocale}>
-          {translated[localeKey].button}
-        </Button>
-        <Button type="success" onClick={() => setVisible(true)}>
-          {translated[localeKey].open}
-        </Button>
-        <Dialog
-          visible={visible}
-          onConfirm={() => setVisible(false)}
-          onCancel={() => setVisible(false)}
-        >
-          {translated[localeKey].welcome}
-        </Dialog>
-        <TextArea disabled showCount maxLength={20} />
+      <View className='nutui-react-demo'>
+        <View>{translated[localeKey].welcome}</View>
+        <View>
+          <Button type='primary' onClick={handleSwitchLocale}>
+            {translated[localeKey].button}
+          </Button>
+          <Button type='success' onClick={() => setVisible(true)}>
+            {translated[localeKey].open}
+          </Button>
+          <Dialog
+            visible={visible}
+            onConfirm={() => setVisible(false)}
+            onCancel={() => setVisible(false)}>
+            {translated[localeKey].welcome}
+          </Dialog>
+          <TextArea disabled showCount maxLength={20} />
+        </View>
       </View>
-    </View>
-  </ConfigProvider>
+    </ConfigProvider>
   )
 }
 
