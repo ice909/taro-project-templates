@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
-import { View } from '@tarojs/components'
-import { Button } from '@nutui/nutui-react-taro'
-import { useTranslate } from '@/sites/assets/locale/taro'
-import enUS from '@nutui/nutui-react-taro/dist/locales/en-US.ts'
-import zhCN from '@nutui/nutui-react-taro/dist/locales/zhCN'
+import React, { useState } from "react";
+import { View } from "@tarojs/components";
+import {
+  Button,
+  ConfigProvider,
+  TextArea,
+  Dialog,
+  Cell
+} from "@nutui/nutui-react-taro";
+import enUS from "@nutui/nutui-react-taro/dist/locales/en-US";
+import zhCN from "@nutui/nutui-react-taro/dist/locales/zh-CN";
 import './index.{{ cssExt }}'
 function Index() {
-  const [locale, setLocale] = useState(zhCN)
+  const [locale, setLocale] = useState(zhCN);
+  const localeKey = locale === zhCN ? 'zhCN' : 'enUS'
+  const [visible, setVisible] = useState(false);
   const [translated] = useTranslate({
     'zh-CN': {
       welcome: '欢迎使用 NutUI React 开发 Taro 多端项目。',
