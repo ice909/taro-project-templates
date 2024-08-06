@@ -31,7 +31,7 @@ function Index() {
         <h3>{translated[localeKey].welcome}</h3>
       </Cell>
       <View>
-        <Button type="primary" onClick={handleSwitchLocale} style={{marginRight: 10}}>
+        <Button type="primary" onClick={handleSwitchLocale}>
           {translated[localeKey].button}
         </Button>
         <Button type="success" onClick={() => setVisible(true)}>
