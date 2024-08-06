@@ -9,7 +9,7 @@ import {
 } from "@nutui/nutui-react-taro";
 import enUS from "@nutui/nutui-react-taro/dist/locales/en-US";
 import zhCN from "@nutui/nutui-react-taro/dist/locales/zh-CN";
-import "./index.scss";
+import './index.{{ cssExt }}'
 function Index() {
   const [locale, setLocale] = useState(zhCN);
   const localeKey = locale === zhCN ? 'zhCN' : 'enUS'
@@ -58,4 +58,7 @@ function Index() {
   );
 }
 
-export default Index;
+export default Index
+
+
+
