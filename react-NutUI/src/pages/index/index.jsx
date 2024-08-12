@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View } from '@tarojs/components'
-import { Button, ConfigProvider, TextArea, Dialog, Cell } from '@nutui/nutui-react-taro'
+import { Button, ConfigProvider, TextArea, Dialog } from '@nutui/nutui-react-taro'
 import enUS from '@nutui/nutui-react-taro/dist/locales/en-US'
 import zhCN from '@nutui/nutui-react-taro/dist/locales/zh-CN'
 import './index.{{ cssExt }}'
@@ -20,7 +20,6 @@ function Index() {
       open: 'Click Me',
     },
   })
-  // const context = useConfig()
   const handleSwitchLocale = () => {
     setLocale(locale === zhCN ? enUS : zhCN)
   }
