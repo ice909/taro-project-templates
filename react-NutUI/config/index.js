@@ -2,7 +2,6 @@ import { defineConfig{{#if typescript }}, type UserConfigExport{{/if}} } from '@
 {{#if typescript }}import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'{{/if}}
 import devConfig from './dev'
 import prodConfig from './prod'
-import react from '@vitejs/plugin-react'
 import vitePluginImp from 'vite-plugin-imp'
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{/if}}(async (merge, { command, mode }) => {
