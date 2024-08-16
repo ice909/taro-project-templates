@@ -2,7 +2,7 @@ import { defineConfig{{#if typescript }}, type UserConfigExport{{/if}} } from '@
 {{#if typescript }}import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'{{/if}}
 import devConfig from './dev'
 import prodConfig from './prod'
-
+import vitePluginImp from 'vite-plugin-imp'
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{/if}}(async (merge, { command, mode }) => {
   const baseConfig{{#if typescript }}: UserConfigExport<'{{ to_lower_case compiler }}'>{{/if}} = {
@@ -28,7 +28,20 @@ export default defineConfig{{#if typescript }}<'{{ to_lower_case compiler }}'>{{
     },
     framework: '{{ to_lower_case framework }}',
     compiler: {
-      type: '{{ to_lower_case compiler }}'{{#if (eq compiler "Webpack5") }},
+      {{#if (eq compiler "Vite") }}
+      vitePlugins: [vitePluginImp({
+        libList: [
+          {
+            libName: '@nutui/nutui-react-taro',
+            style: (name) => {
+              return `@nutui/nutui-react-taro/dist/esm/${name}/style/css`
+            },
+            replaceOldImport: false,
+            camel2DashComponentName: false,
+          }
+        ]
+      })],{{/if}}
+      type: '{{ to_lower_case compiler }}'{{#if (eq compiler "Webpack5") }}, 
       prebundle: {
         enable: false
       }{{/if}}
